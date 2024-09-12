@@ -1,12 +1,10 @@
 <?php
-require_once "db.php";   // Verander naar require_once
-require_once "product.php";  // Verander naar require_once
+require_once "db.php";  
+require_once "product.php";  
 
-// Maak een nieuwe instantie van de DB class
 $db = new DB(); 
 
-// Geef de DB-instantie door aan het Product-object
-$product = new Product($db);  // Nu wordt het juiste object doorgegeven
+$product = new Product($db);  
 try
 {
     if ($_SERVER ['REQUEST_METHOD'] == 'POST')
