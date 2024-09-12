@@ -10,9 +10,9 @@ Class Product
         $this->pdo = $pdo;
     }
 
-    public function insertProduct($naam, $prijs)
+    public function insertProduct($omschrijving, $prijs, $fileToUpload) : PDOStatement | False
     {
-        return $this->pdo->execute("INSERT INTO product (naam, prijs) VALUES (?,?)", [$naam, $prijs]);
+        return $this->pdo->execute("INSERT INTO product (omschrijving, prijs, fileToUpload) VALUES (?,?,?)", [$omschrijving, $prijs, $fileToUpload]);
     }
 }
 ?>
