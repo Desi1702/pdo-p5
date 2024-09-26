@@ -58,7 +58,7 @@ if ($uploadOk == 0) {
 }
 
         $product->insertProduct($_POST['omschrijving'],$_POST['prijs'], $target_file);
-        echo "Succesfully inserted product";
+        echo "Successfully inserted product";
     }
 } catch (\Exception $e)
 {
@@ -82,6 +82,9 @@ if ($uploadOk == 0) {
         <input type = "number" name = "prijs" Placeholder = "Prijs">
         <br>
         <input type = "submit" value = "submit">
-    </form>
+</form>
+
+
+
 </body>
 </html>

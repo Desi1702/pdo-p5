@@ -22,5 +22,17 @@ Class DB
         $stmt->execute($placeholders);
         return $stmt;
     }
+
+    public function getAllProducts() {
+        $sql = "SELECT * FROM product";
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->execute();
+
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    
+        return $products;
+    }
+    
+
 }
 ?>
