@@ -28,8 +28,8 @@ $product = new Product($db);
     echo "<td>".$product['id']."</td>";
     echo "<td>".$product['omschrijving']."</td>";
     echo "<td>".$product['prijs']."</td>";
-    echo "<td><a href = 'product-delete.php'?id=" .$product['id'].">Delete</a> </td>";
-    echo "<td><a href='product-edit.php?id=" .$product['id']."'>Bewerken</a></td>";
+    echo "<td><a href='product-delete.php?id=" .$product['id']."'>Delete</a></td>";
+    echo "<td><a href='product-edit.php?id=" .$product['id']."'>Edit</a></td>";
     echo "</tr>";
   }
   ?>
