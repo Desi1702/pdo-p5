@@ -30,4 +30,9 @@ class Product
         $sql = "SELECT * FROM product WHERE id = ?";
         return $this->pdo->execute($sql, [$id])->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function deleteProduct($id)
+    {
+        return $this->pdo->deleteProduct($id);
+    }
 }

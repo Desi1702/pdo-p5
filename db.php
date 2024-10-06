@@ -31,10 +31,16 @@ class DB
 
         return $products;
     }
-    
+
     public function editProduct($id, $omschrijving, $prijs)
     {
         $sql = "UPDATE product SET omschrijving = ?, prijs = ? WHERE id = ?";
         return $this->execute($sql, [$omschrijving, $prijs, $id]);
+    }
+    
+    public function deleteProduct($id)
+    {
+        $sql = "DELETE FROM product WHERE id = ?";
+        return $this->execute($sql, [$id]);
     }
 }
