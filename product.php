@@ -1,7 +1,7 @@
 <?php
 require_once "db.php";
 
-Class Product
+class Product
 {
     private $pdo;
 
@@ -10,7 +10,7 @@ Class Product
         $this->pdo = $pdo;
     }
 
-    public function insertProduct($omschrijving, $prijs, $fileToUpload) 
+    public function insertProduct($omschrijving, $prijs, $fileToUpload)
     {
         return $this->pdo->execute("INSERT INTO product (omschrijving, prijs, fileToUpload) VALUES (?,?,?)", [$omschrijving, $prijs, $fileToUpload]);
     }
@@ -20,5 +20,14 @@ Class Product
         return $this->pdo->execute("SELECT * FROM product")->fetchAll();
     }
 
+    public function editProduct($id, $omschrijving, $prijs, $fileToUpload = null)
+    {
+        return $this->pdo->editProduct($id, $omschrijving, $prijs, $fileToUpload);
+    }
+
+    public function selectProductById($id)
+    {
+        $sql = "SELECT * FROM product WHERE id = ?";
+        return $this->pdo->execute($sql, [$id])->fetch(PDO::FETCH_ASSOC);
+    }
 }
-?>
