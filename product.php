@@ -35,4 +35,5 @@ class Product
     {
         return $this->pdo->deleteProduct($id);
     }
+    
 }
