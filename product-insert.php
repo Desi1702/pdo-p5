@@ -71,18 +71,38 @@ if ($uploadOk == 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?v=1.0">
     <title>Document</title>
 </head>
 <body>
-<form method="post" enctype="multipart/form-data">
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <br>
-        <input type = "text" name = "omschrijving" Placeholder = "Omschrijving">
-        <br>
-        <input type = "number" name = "prijs" Placeholder = "Prijs">
-        <br>
-        <input type = "submit" value = "submit">
-</form>
+<ul>
+  <li><a class="active" href="#productinsert">Product Insert</a></li>
+  <li><a href="product-view.php">Product View</a></li>
+  <li><a href="logout.php">Log out</a></li> 
+
+
+</ul>
+<div class="container">
+    <h2>Insert Product</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="fileToUpload" id="fileToUpload" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="omschrijving" placeholder="Omschrijving" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" name="prijs" placeholder="Prijs" required>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
 
 
 

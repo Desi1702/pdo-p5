@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+}
+
+ul li {
+    display: inline;
+}
+
+ul li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: #111;
+}
+
+ul li a.active {
+    background-color: #007bff;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input[type="file"],
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-group input[type="submit"],
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover,
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.success {
+    color: green;
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+table td a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+table td a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+.login-container h2 {
+    text-align: center;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Specifieke stijlen voor het bewerken van producten */
+.edit-product-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    margin: 20px auto; /* Center de container horizontaal met wat marge boven en onder */
+}
+
+.edit-product-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+.edit-product-container form {
+    display: flex;
+    flex-direction: column; /* Maak het formulier verticaal gestapeld */
+}
+
+.edit-product-container input[type="text"],
+.edit-product-container input[type="number"],
+.edit-product-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px; /* Voeg wat ruimte toe tussen de invoervelden */
+}
+
+.edit-product-container input[type="text"]:focus,
+.edit-product-container input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.edit-product-container input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-product-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}

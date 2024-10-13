@@ -10,9 +10,16 @@ $product = new Product($db);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?v=1.0">
     <title>Document</title>
 </head>
 <body>
+<ul>
+  <li><a class="active" href="#productview">Product View</a></li>
+  <li><a href="product-insert.php">Product Insert</a></li>
+  <li><a href="logout.php">Log out</a></li> 
+
+</ul>
 <table>
   <th>Product Code</th>
   <th>Naam</th>

@@ -22,23 +22,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     echo "Product succesvol bijgewerkt!";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?v=1.0">
     <title>Product Bewerken</title>
 </head>
 <body>
-    <h1>Product Bewerken</h1>
-    <form method="post">
-        <input type="hidden" name="id" value="<?php echo $productDetails['id']; ?>">
-        <input type="text" name="omschrijving" value="<?php echo $productDetails['omschrijving']; ?>" placeholder="Omschrijving">
-        <br>
-        <input type="number" name="prijs" value="<?php echo $productDetails['prijs']; ?>" placeholder="Prijs">
-        <br>
-        <input type="submit" value="Bijwerken">
-    </form>
+<ul>
+  <li><a href="product-insert.php">Product Insert</a></li>
+  <li><a href="product-view.php">Product View</a></li>
+  <li><a href="logout.php">Log out</a></li> 
+</ul>
+
+    <div class="edit-product-container">
+        <h1>Product Bewerken</h1>
+        <form method="post">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($productDetails['id']); ?>">
+            <input type="text" name="omschrijving" value="<?php echo htmlspecialchars($productDetails['omschrijving']); ?>" placeholder="Omschrijving" required>
+            <input type="number" name="prijs" value="<?php echo htmlspecialchars($productDetails['prijs']); ?>" placeholder="Prijs" required>
+            <input type="submit" value="Bijwerken">
+        </form>
+    </div>
+
 </body>
 </html>
