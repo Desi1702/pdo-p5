@@ -1,7 +1,7 @@
 <?php
-require_once 'db.php';
+require_once 'users/user.php';
 
-$db = new DB();
+$user = new User();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -9,39 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    if (empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
-        header("Location: register.php?error=All fields are required.");
-        exit;
-    }
+    $result = $user->register($username, $email, $password, $confirm_password);
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: register.php?error=Invalid email format.");
-        exit;
-    }
-
-    if ($password !== $confirm_password) {
-        header("Location: register.php?error=Passwords do not match.");
-        exit;
-    }
-
-    $sql = "SELECT * FROM users WHERE email = ?";
-    $existingUser = $db->execute($sql, [$email])->fetch(PDO::FETCH_ASSOC);
-
-    if ($existingUser) {
-        header("Location: register.php?error=Email already registered.");
-        exit;
-    }
-
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    $result = $db->execute($sql, [$username, $email, $hashed_password]);
-
-    if ($result) {
+    if ($result === true) {
         header("Location: product-insert.php");
         exit;
     } else {
-        header("Location: register.php?error=Something went wrong. Please try again.");
+        header("Location: register.php?error=" . urlencode($result));
         exit;
     }
 }
